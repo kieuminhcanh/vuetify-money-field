@@ -4,7 +4,10 @@ import VMoneyField from './components/MoneyField.vue'
 
 const optionsDefaults = {
   // Retrieves the current logged in user that is posting a comment
-  locale: 'us'
+  locale: 'us',
+  style: 'currency',
+  currency: 'USD',
+  formatThousands: false
 }
 
 export default {
@@ -15,7 +18,8 @@ export default {
       const options = { ...globalOptions, ...opts }
 
       let result = new Intl.NumberFormat(options.locale, {
-        style: 'decimal'
+        style: options.style,
+        currency: options.currency
       }).format(val)
 
       if (options.formatThousands && result.endsWith('.000')) {
