@@ -1,0 +1,8 @@
+{
+  "name": "v-money-field",
+  "version": "1.0.0",
+  "description": "A vuetify money component",
+  "main": "index.js",
+  "author": "CanhKieu",
+  "license": "MIT"
+}
