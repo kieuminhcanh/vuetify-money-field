@@ -24,7 +24,7 @@ export default {
   methods: {
     reverseFormatNumber(val, locale) {
       var group = new Intl.NumberFormat(locale).format(1111).replace(/1/g, '')
-      console.log(group)
+      // console.log(group)
 
       var decimal = new Intl.NumberFormat(locale).format(1.1).replace(/1/g, '')
       var reversedVal = val.replace(new RegExp('\\' + group, 'g'), '')
@@ -51,7 +51,9 @@ export default {
       }
     },
     onInput(val) {
-      this.parseNumber(val.toString())
+      if (val) {
+        this.parseNumber(val.toString())
+      }
     }
   }
 }
